@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'soft-condominios';
+  opened: boolean = false;
+  @ViewChild('sidenav') sidenav: MatSidenav;
+
+  open(){
+    this.sidenav.toggle().then(value => value == 'open' ? this.opened = true : this.opened = false );
+    console.log(this.sidenav)
+  }
 }
