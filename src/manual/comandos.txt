@@ -1,0 +1,6 @@
+Para criar paginas com modulo, rota e automaticamente adicionar a nova rota ao modulo de rotas principal
+este comando abaixo resolve isso, criar paginas dessa forma faz com que as paginas sejam carregadas dinamicamente, 
+melhorando a experiencia do usuario
+
+
+ng g module pages/nome-da-pagina --route nome-da-pagina --module app.module 

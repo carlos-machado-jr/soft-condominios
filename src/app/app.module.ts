@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialDesignModule } from './share/material-design/material-design.module';
+import { SidenavMenuComponent } from './share/components/sidenav-menu/sidenav-menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidenavMenuComponent
   ],
   imports: [
     BrowserModule,

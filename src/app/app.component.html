@@ -1,17 +1,3 @@
-<mat-sidenav-container class="example-container" >
-  <mat-sidenav #sidenav mode="side" >
-    Sidenav content
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <button mat-button (click)="open()">
-      <mat-icon *ngIf="!opened">sort</mat-icon>
-      <mat-icon *ngIf="opened">arrow_back</mat-icon>
-    </button>
-
-   
-    
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
-
+<sidenav-menu [menu]="menu" [user]="user" >
+  <router-outlet></router-outlet>
+</sidenav-menu>
