@@ -1,5 +1,5 @@
 <mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav mode="side">
+    <mat-sidenav #sidenav mode="side" *ngIf="exibirMenu">
   
       <div class="perfil">
         <div class="foto-perfil">
@@ -16,7 +16,7 @@
   
       <div class="botoes">
         <button mat-raised-button color="primary">Editar Perfil</button>
-        <button mat-raised-button color="warn">Sair</button>
+        <button mat-raised-button color="warn" (click)="sairDaConta()" >Sair</button>
       </div>
       <mat-selection-list  [multiple]="false">
         <mat-list-option routerLink=''>
@@ -48,7 +48,7 @@
     </mat-sidenav>
   
     <mat-sidenav-content>
-      <header>
+      <header *ngIf="exibirMenu">
         <mat-toolbar color="primary">
           <button (click)="open()" mat-icon-button>
             <mat-icon *ngIf="!opened">sort</mat-icon>

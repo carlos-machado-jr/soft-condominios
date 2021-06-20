@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialDesignModule } from './share/material-design/material-design.module';
 import { SidenavMenuComponent } from './share/components/sidenav-menu/sidenav-menu.component';
+import { AutentiticacaoService } from './share/utils/autentiticacao.service';
+import { AutenticacaoGuard } from './core/guards/autenticacao.guard';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,11 @@ import { SidenavMenuComponent } from './share/components/sidenav-menu/sidenav-me
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MaterialDesignModule
   ],
-  providers: [],
+  providers: [AutentiticacaoService, AutenticacaoGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
