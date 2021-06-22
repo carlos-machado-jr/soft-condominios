@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MaterialDesignModule } from '../../share/material-design/material-design.module';
+
 
 
 @NgModule({
@@ -13,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     LoginRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialDesignModule
   ]
 })
 export class LoginModule { }

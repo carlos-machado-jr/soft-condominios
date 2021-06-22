@@ -19,5 +19,16 @@
     border-radius: 20px;
     
   }
+
+:root{
+  --white: #FFFFFF;
+
+  --dark: #1C1C1C;
+
+  --blue-50: #67DAFF;
+  --blue-100: #03A9F4;
+
+  --purple: #6C63FF;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

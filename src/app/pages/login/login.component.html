@@ -1,2 +1,57 @@
-<p>login works!</p>
-<button mat-button (click)="login()">fazer login</button>
+<section id="login">
+    <div class="container">
+        <div class="container-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="container-box-image">
+                        <img src="../../../assets/imagens/background.svg" width="auto" alt="Background">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="container-box-form">
+                        <div class="container-box-form-header">
+                            <div class="item">
+                                <p>Ainda não tem uma conta?</p>
+
+                                <a href="/cadastro">
+                                    Criar conta
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="container-box-form-body">
+                            <h1>Login</h1>
+
+                            <div class="form">
+                                <form action="">
+                                    <div class="form-group mb-3">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>E-mail</mat-label>
+                                            <input type="email" matInput>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Senha</mat-label>
+                                            <input type="password" matInput>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="forget-password">
+                                        <a href="">Esqueci minha senha</a>
+                                    </div>
+
+                                    <div class="submit mt-3">
+                                        <button type="submit" class="btn" onclick="login()">Login</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
