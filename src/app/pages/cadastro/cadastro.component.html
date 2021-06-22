@@ -1,32 +1,122 @@
-<section>
-    <div class="container">
-        <div class="container-box">
-            <div class="container-box-title">
-                <h1>Cadastrar conta</h1>
+<section id="cadastro">
+  <div class="container">
+    <div class="container-box">
+      <div class="container-box-title">
+        <h1>Cadastrar conta</h1>
+      </div>
+
+      <div class="container-box-form">
+        <form action="">
+          <div class="row">
+            <!-- 1ª LINHA -->
+            <div class="col-md-4">
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>E-mail</mat-label>
+                  <input type="email" matInput>
+                </mat-form-field>
+              </div>
+
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>Senha</mat-label>
+                  <input type="password" matInput>
+                </mat-form-field>
+              </div>
+
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>Confirmar senha</mat-label>
+                  <input type="password" matInput>
+                </mat-form-field>
+              </div>
+
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>Nome*</mat-label>
+                  <input type="text" matInput>
+                </mat-form-field>
+              </div>
+
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>CPF*</mat-label>
+                  <input type="password" matInput>
+                </mat-form-field>
+              </div>
             </div>
 
-            <div class="container-box-form">
-                <div class="row">
-                    <div class="col-md-4">
-                        <mat-form-field appearance="outline">
-                            <mat-label>E-mail</mat-label>
-                            <input type="email" matInput>
-                        </mat-form-field>
+            <div class="col-md-4">
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>Sobrenome*</mat-label>
+                  <input type="text" matInput>
+                </mat-form-field>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <mat-form-field class="mr-2" appearance="outline">
+                        <mat-label>Estado*</mat-label>
+                        <mat-select>
+                          <mat-option value="ac">AC</mat-option>
+                          <mat-option value="al">AL</mat-option>
+                          <mat-option value="ap">AP</mat-option>
+                          <mat-option value="am">AM</mat-option>
+                          <mat-option value="ba">BA</mat-option>
+                          <mat-option value="ce">CE</mat-option>
+                          <mat-option value="df">DF</mat-option>
+                          <mat-option value="es">ES</mat-option>
+                          <mat-option value="go">GO</mat-option>
+                          <mat-option value="ma">MA</mat-option>
+                          <mat-option value="mt">MT</mat-option>
+                          <mat-option value="ms">MS</mat-option>
+                          <mat-option value="mg">MG</mat-option>
+                          <mat-option value="pa">PA</mat-option>
+                          <mat-option value="pb">PB</mat-option>
+                          <mat-option value="pr">PR</mat-option>
+                          <mat-option value="pe">PE</mat-option>
+                          <mat-option value="pi">PI</mat-option>
+                          <mat-option value="rr">RR</mat-option>
+                          <mat-option value="ro">RO</mat-option>
+                          <mat-option value="rj">RJ</mat-option>
+                          <mat-option value="rn">RN</mat-option>
+                          <mat-option value="rs">RS</mat-option>
+                          <mat-option value="sc">SC</mat-option>
+                          <mat-option value="sp">SP</mat-option>
+                          <mat-option value="se">SE</mat-option>
+                          <mat-option value="to">TO</mat-option>
+                        </mat-select>
+                      </mat-form-field>
                     </div>
-                    <div class="col-md-4">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Nome*</mat-label>
-                            <input type="text" matInput>
-                        </mat-form-field>
+                    <div class="col-md-6">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Cidade*</mat-label>
+                        <mat-select>
+                          <mat-option value="ac">AC</mat-option>
+                        </mat-select>
+                      </mat-form-field>
                     </div>
-                    <div class="col-md-4">
-                        <mat-form-field appearance="outline">
-                            <mat-label>E-mail</mat-label>
-                            <input type="email" matInput>
-                        </mat-form-field>
-                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
+
+            <div class="submit">
+              <div class="item">
+                <button type="submit" class="btn">Criar conta</button>
+                <a href="/login">
+                  Fazer login em vez disso
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </section>

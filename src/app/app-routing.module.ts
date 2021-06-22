@@ -7,7 +7,8 @@ const routes: Routes = [
   
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
   { path: '', pathMatch: 'full', redirectTo: 'home'},
-  { path: 'cadstro', loadChildren: () => import('./pages/cadastro/cadastro.module').then(m => m.CadastroModule) }
+  { path: 'cadastro', loadChildren: () => import('./pages/cadastro/cadastro.module').then(m => m.CadastroModule) },
+  { path: 'forgot-password', loadChildren: () => import('./pages/forgot-password/forgot-password.module').then(m => m.ForgotPasswordModule) }
 ];
 
 @NgModule({
