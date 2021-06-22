@@ -3,7 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { Menu } from 'src/app/core/models/menu';
 import { User } from 'src/app/core/models/user';
-import { AutentiticacaoService } from '../../utils/autentiticacao.service';
+import { AutentiticacaoService } from '../../utils/services/autentiticacao.service';
 
 @Component({
   selector: 'sidenav-menu',

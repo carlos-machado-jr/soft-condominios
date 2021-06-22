@@ -2,7 +2,6 @@ import { Component, Input, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Menu } from './core/models/menu';
 import { User } from './core/models/user';
-import { AutentiticacaoService } from './share/utils/autentiticacao.service';
 
 @Component({
   selector: 'app-root',

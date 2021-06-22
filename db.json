@@ -1,12 +1,19 @@
 {
-    "usuarios" : [
-
-        {
-            "id" : 1,
-            "email" : "teste@gmail.com",
-            "nome" :  "teste"
-        }
-
-    ]
-
-}   
+  "login": [
+    {
+      "id": 1,
+      "email": "teste@gmail.com",
+      "senha": "teste"
+    },
+    {
+      "email_login": "teste@gmail.com",
+      "password_login": "teste",
+      "id": 2
+    },
+    {
+      "email_login": "teste@gmail.com",
+      "password_login": "teste",
+      "id": 3
+    }
+  ]
+}

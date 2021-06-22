@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
+import { tap, finalize, mergeMap, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -25,14 +26,18 @@ export class AutentiticacaoService {
     return this.estaLogado.getValue();
   }
 
-  public login(){
-    this.http.post<any>(`${environment.baseUrl}/login`,{ title : "Login request"} ).subscribe(data => {
-      this.email = data.email
-      this.senha = data.senha
-    })
-
-    
+  login(usuario: any){
+    return this.http.post(`${environment.baseUrl}/login`, usuario, {
+      observe: 'response',
+      responseType: 'text'
+    }).pipe(
+      tap(response => {
+        console.log(response)
+        // this.succesfulLogin(response.headers.get('Authorization'))
+      })
+    );
   }
+
   public sairDaConta(){
 
   }

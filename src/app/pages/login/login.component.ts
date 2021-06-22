@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AutentiticacaoService } from 'src/app/share/utils/autentiticacao.service';
 import { User } from '../../core/models/user';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AutentiticacaoService } from '../../share/utils/services/autentiticacao.service';
 
 @Component({
   selector: 'app-login',
@@ -29,11 +29,20 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['home']);
   }
 
-  logar(){}
+  logar(){
+    this.autenticacao.login(this.formLogin.value)
+    .subscribe(
+      sucess => {
+        
+        this.router.navigate(['/home'])
+      },
+      erro => ''
+    );
+  }
 
   formularioLogin(){
     this.formLogin = this.formBuilder.group({
-      email_login: ['', Validators.required, Validators.email],
+      email_login: ['', Validators.required],
       password_login: ['', Validators.required],
     })
   }
