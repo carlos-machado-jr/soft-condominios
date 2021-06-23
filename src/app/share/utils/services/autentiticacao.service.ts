@@ -7,12 +7,14 @@ import { StorageService } from './storage.service';
 import { AccountServiceService } from './account-service.service';
 import { Router } from '@angular/router';
 import { localUser } from '../../../core/models/localUser';
+import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutentiticacaoService {
 
+  jwt = new JwtHelperService();
   email: string;
   senha: string;
 
@@ -41,7 +43,7 @@ export class AutentiticacaoService {
     );
   }
 
-  succesfulLogin(authorizationValue: String) {
+  succesfulLogin(authorizationValue: any) {
     if (authorizationValue != null) {
       let user = this.extractToken(authorizationValue.substring(7));
       this.storage.setLocalUser(user);
