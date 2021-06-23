@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Menu } from 'src/app/core/models/menu';
 import { User } from 'src/app/core/models/user';
 import { AutentiticacaoService } from '../../utils/services/autentiticacao.service';
+import { AccountServiceService } from '../../utils/services/account-service.service';
 
 @Component({
   selector: 'sidenav-menu',
@@ -21,11 +22,12 @@ export class SidenavMenuComponent{
   public exibirMenu = false;
   constructor(
     private autenticacao: AutentiticacaoService,
+    private account: AccountServiceService,
     private router: Router
    ){}
 
   ngOnInit(){
-    this.autenticacao.exibirMenu.subscribe(value => this.exibirMenu = value);
+    this.account.exibirMenu.subscribe(value => this.exibirMenu = value);
   }
 
 
@@ -34,8 +36,8 @@ export class SidenavMenuComponent{
   }
 
   public sairDaConta(){
-    this.autenticacao.exibirMenu.next(false);
-    this.autenticacao.estaLogado.next(false);
+    this.account.exibirMenu.next(false);
+    this.account.estaLogado.next(false);
     this.router.navigate(['login']);
 
   }

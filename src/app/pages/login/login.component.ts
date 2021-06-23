@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { User } from '../../core/models/user';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AutentiticacaoService } from '../../share/utils/services/autentiticacao.service';
+import { AccountServiceService } from '../../share/utils/services/account-service.service';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private autenticacao: AutentiticacaoService,
+    private account: AccountServiceService,
     private router: Router,
     private formBuilder: FormBuilder
   ) { }
@@ -23,11 +25,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.formularioLogin();
   }
-  login(){
-    this.autenticacao.exibirMenu.next(true);
-    this.autenticacao.estaLogado.next(true);
-    this.router.navigate(['home']);
-  }
+  
+ 
 
   logar(){
     this.autenticacao.login(this.formLogin.value)
