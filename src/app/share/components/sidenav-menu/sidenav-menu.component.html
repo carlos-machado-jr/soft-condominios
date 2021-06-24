@@ -1,78 +1,177 @@
 <mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav mode="side" *ngIf="exibirMenu">
-  
-      <div class="perfil">
-        <div class="foto-perfil">
-          <figure>
-            <img [src]="user.fotoPerfil ? user.fotoPerfil : '../assets/imagens/perfil.jpg' "
-              alt="foto de perfil do usuario">
-          </figure>
-        </div>
-        <div class="descricao">
-          <span class="nome">{{ user.nome ? user.nome : 'Carlos henrique ' }}</span>
-          <span class="email">{{ user.email ? user.email : 'machadopnn@gmail.com'}}</span>
-        </div>
+  <mat-sidenav #sidenav mode="side" *ngIf="exibirMenu">
+
+    <div class="logo-container pt-3">
+      <div class="logo text-center">
+        <img src="./assets/imagens/logo.svg" alt="Logo Soft Condominios">
       </div>
-  
-      <div class="botoes">
-        <button mat-raised-button color="primary">Editar Perfil</button>
-        <button mat-raised-button color="warn" (click)="sairDaConta()" >Sair</button>
+    </div>
+
+    <div class="perfil">
+      <div class="foto-perfil">
+        <figure>
+          <img [src]="user.fotoPerfil ? user.fotoPerfil : '../assets/imagens/perfil.jpg' " alt="foto de perfil do usuario">
+        </figure>
       </div>
-      <mat-selection-list  [multiple]="false">
-        <mat-list-option routerLink=''>
-          <mat-icon mat-list-icon>apartment</mat-icon>
-          Editar condominio
-        </mat-list-option>
-        <mat-list-option routerLink=''>
-          <mat-icon mat-list-icon>dashboard</mat-icon>
-          Dashboard
-        </mat-list-option>
-      </mat-selection-list>
-      <mat-accordion>
-        <mat-expansion-panel *ngFor="let menu of menu">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <mat-icon>{{menu.icon}}</mat-icon>
-              <span>{{menu.descricao}}</span>
-            </mat-panel-title>
-  
-          </mat-expansion-panel-header>
-  
-          <mat-selection-list *ngFor="let itens of menu.menuItem" [multiple]="false">
-            <mat-list-option routerLink=''>
-              {{itens.descricao}}
-            </mat-list-option>
-          </mat-selection-list>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </mat-sidenav>
-  
-    <mat-sidenav-content>
-      <header *ngIf="exibirMenu">
-        <mat-toolbar color="primary">
-          <button (click)="open()" mat-icon-button>
-            <mat-icon *ngIf="!opened">sort</mat-icon>
-            <mat-icon *ngIf="opened">arrow_back</mat-icon>
-          </button>
-          <span>Soft Condominios</span>
-          <div class="example-spacer">
-  
-          </div>
-          <button mat-icon-button>
-            <mat-icon>notifications</mat-icon>
-          </button>
-          <button mat-icon-button>
-            <mat-icon>help_outline</mat-icon>
-          </button>
-        </mat-toolbar>
-      </header>
-  
-  <!-- conteudo do site -->
-  <ng-content>
-      
-  </ng-content>
-  
-  
-  
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+      <div class="descricao">
+        <span class="nome">{{ user.nome ? user.nome : 'Carlos henrique ' }}</span>
+        <span class="email">{{ user.email ? user.email : 'machadopnn@gmail.com'}}</span>
+      </div>
+    </div>
+
+    <div class="botoes">
+      <button mat-raised-button class="perfil">Editar Perfil</button>
+      <button mat-raised-button class="logout" (click)="sairDaConta()">Sair</button>
+    </div>
+
+    <hr>
+
+    <mat-selection-list [multiple]="false">
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>apartment</mat-icon>
+        Editar condominio
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>dashboard</mat-icon>
+        Dashboard
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>folder_open</mat-icon>
+        Documentos
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>supervisor_account</mat-icon>
+        Entrada e saída de visitantes
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>warning</mat-icon>
+        Reclamações
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>local_shipping</mat-icon>
+        Entrega de Documentos
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>edit_calendar</mat-icon>
+        Agendamento e reservas
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>find_in_page</mat-icon>
+        Achados e perdidos
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>directions_car</mat-icon>
+        Cadastro de veículos
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>badge</mat-icon>
+        Funcionários
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>assistant</mat-icon>
+        Sugestão
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>video_camera_front</mat-icon>
+        Assembleia Online
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink=''>
+        <mat-icon mat-list-icon>engineering</mat-icon>
+        Calendário de Obras
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <header *ngIf="exibirMenu">
+      <mat-toolbar color="primary">
+        <button (click)="open()" mat-icon-button>
+          <mat-icon *ngIf="!opened">sort</mat-icon>
+          <mat-icon *ngIf="opened">arrow_back</mat-icon>
+        </button>
+        <span>Soft Condominios</span>
+        <div class="example-spacer">
+
+        </div>
+        <button mat-icon-button>
+          <mat-icon>notifications</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>help_outline</mat-icon>
+        </button>
+      </mat-toolbar>
+    </header>
+
+    <!-- conteudo do site -->
+    <ng-content>
+
+    </ng-content>
+
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

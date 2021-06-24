@@ -1,6 +1,6 @@
 #login{
     height: 100vh;
-    background: var(--blue-50);
+    background: var(--purple-50);
 
     .container{
         height: 100%;
@@ -21,7 +21,7 @@
             }
 
             &-image{
-                background: var(--blue-100);
+                background: linear-gradient(180deg, #512DA8 0%, rgba(172, 141, 247, 0.15) 100%), #512DA8;
                 padding: 5rem; 
                 height: 100%;
                 display: flex;
@@ -76,7 +76,7 @@
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            color: var(--purple);
+                            color: var(--purple-100);
                             padding: .5rem 1rem;
                             text-decoration: none;
                             text-transform: uppercase;
@@ -125,7 +125,7 @@
                     .submit{
                         margin-bottom: 3rem;
                         button{
-                            background-color: var(--purple);
+                            background-color: var(--purple-100);
                             text-transform: uppercase;
                             color: var(--white);
                             padding: .3rem 1.8rem;

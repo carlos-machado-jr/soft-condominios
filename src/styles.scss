@@ -7,7 +7,7 @@
   
   /* Works on Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   
   *::-webkit-scrollbar-track {
@@ -15,9 +15,8 @@
   }
   
   *::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 255, 0.301);
+    background-color: rgba(60, 32, 126, 0.5);
     border-radius: 20px;
-    
   }
 
 :root{
@@ -25,11 +24,17 @@
 
   --dark: #1C1C1C;
 
-  --blue-50: #67DAFF;
-  --blue-100: #03A9F4;
-
-  --purple: #6C63FF;
-  --purple-100: #6200EE;
+  --purple-50: #E3D9FD;
+  --purple-100: #512DA8;
+  --purple-150: #5231A2;
+  --purple-200: #6200EE;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-list-text{
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+}

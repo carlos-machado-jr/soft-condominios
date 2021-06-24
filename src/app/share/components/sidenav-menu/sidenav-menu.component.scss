@@ -5,9 +5,10 @@ mat-sidenav-container{
     bottom: 0;
     left: 0;
     right: 0;
+    
     mat-sidenav{
         width: 300px;
-        background-color: #3f51b5;
+        background: linear-gradient(180deg, #512DA8 0%, rgba(172, 141, 247, 0.15) 100%), #512DA8;
         overflow: hidden;
         .perfil{
             padding: 20px 24px;
@@ -16,29 +17,35 @@ mat-sidenav-container{
             align-content: center;
 
             .foto-perfil{
-                width: 60px;
+                width: 3.8rem;
                 
                 figure{
-                    width: 50px;
+                    width: 100%;
                     margin: 0!important;
                     padding: 0!important;
                     img{
-                        width: 100%;
-                        border-radius: 100%;
+                       width: 50px;
+                       height: 50px;
+                       border-radius: 50%;
+                       object-fit: cover;
+                       object-position: center
                     }
                 }
             }
             .descricao{
                 display: flex;
                 flex-direction: column;
-                .nome{
-                    font-size: 14px;
+                span{
+                    color: var(--white);
                     font-weight: 300;
+                }
+
+                .nome{
+                    font-size: 1rem;
                     text-transform: capitalize;
                 }
                 .email{
-                    font-size: 12px;
-                    font-weight: 500;
+                    font-size: .9rem;
                 }
             }
         }
@@ -46,35 +53,59 @@ mat-sidenav-container{
             display: flex;
             justify-content: space-between;
             padding: 0px 20px;
-        }
-        mat-selection-list{
-            
-            mat-list-item-content{
-                padding: 0 16px!important;
+
+            button{
+                color: var(--white);
+            }
+
+            .perfil{
+                background-color: var(--purple-150);
+                filter: drop-shadow(0px 2px 15px rgba(0, 0, 0, 0.25));
+                padding: .1rem 2rem;
+            }
+
+            .logout{
+                background: rgba(244, 81, 111, 0.7);
+                filter: drop-shadow(0px 2px 15px rgba(0, 0, 0, 0.25));
+                padding: .1rem 2rem;
             }
         }
-    
-        mat-accordion{
-            mat-expansion-panel{
-                background-color: #3f51b5;
-                mat-expansion-panel-header{
-                    padding: 0 16px!important;
-                    mat-panel-title{
-                        align-items: center;
-                        mat-icon{
-                            flex-shrink: 0;
-                            width: 24px;
-                            height: 24px;
-                            font-size: 24px;
-                            box-sizing: content-box;
-                            border-radius: 50%;
-                            padding: 4px;
-                        }
-                        span{
-                            padding: 0 16px;
-                        }
-                    }
+
+        hr{
+            width: 90%;
+            margin-right: auto;
+            margin-left: auto;
+            color: #FFF;
+            opacity: .7;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+        }
+
+        .mat-list-option{
+            color: #EEEEEE;
+            transition: all .4s;
+            border-right: solid .35rem transparent;
+
+            &:hover{
+                background: rgba(60, 32, 126, 0.3);
+                border-color: #3C207E;
+
+                .icon{
+                    opacity: 1;
                 }
+            }  
+
+            .icon{
+                opacity: 0;
+            }
+        }
+
+        mat-icon{
+            color: var(--purple-50);
+        }
+
+        mat-selection-list{
+            mat-list-item-content{
+                padding: 0 16px!important;
             }
         }
     }
@@ -87,12 +118,14 @@ mat-sidenav-container{
     mat-sidenav-content{
         .example-spacer {
             flex: 1 1 auto;
-          }
+        }
+
+        mat-toolbar{
+            background: linear-gradient(180deg, #512DA8 0%, rgba(88, 67, 137, 0) 100%), #512DA8;
+            box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25), 0px 4px 5px rgba(0, 0, 0, 0.25);
+        }
     }
 }
 .mat-form-field + .mat-form-field {
     margin-left: 8px;
-  }
-
-  
-  
+}
