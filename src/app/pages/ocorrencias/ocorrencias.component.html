@@ -1,0 +1,117 @@
+<section id="ocorrencias">
+    <div class="container">
+        <div class="container-box-header">
+            <div class="title">
+                <h1>Ocorrências</h1>
+            </div>
+
+            <div class="button">
+                <button class="btn">
+                    <mat-icon mat-list-icon>add</mat-icon>
+                    Nova ocorrência
+                </button>
+            </div>
+        </div>
+
+        <div class="container-box-accordion mt-5">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            #002 - Excesso de barulho
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Reclamação em 28/06/2021 às 21:00 horas
+                        </mat-panel-description>
+                        <mat-panel-description>
+                            <span>Criado por: </span> Joberto Santos |
+                            <span>Autor: </span>Manoel Santos (Bloco 02 - Apto 101)
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <div class="container">
+                        <div class="container-information">
+                            <div class="item codigo">
+                                <h6>Código:</h6>
+                                <p>#002</p>
+                            </div>
+
+                            <div class="item residencia">
+                                <h6>Residência:</h6>
+                                <p>Bloco 02 - APT101</p>
+                            </div>
+
+                            <div class="item situacao">
+                                <h6>Situação:</h6>
+                                <p>Pendente</p>
+                            </div>
+
+                            <div class="item autor">
+                                <h6>Autor:</h6>
+                                <p>Manoel Santos</p>
+                            </div>
+
+                            <div class="item description">
+                                <h6>Descrição:</h6>
+                                <p>Ap 102 fez muito barulho essa noite</p>
+                            </div>
+                        </div>
+
+                        <div class="container-acompanhamento">
+                            <h5 class="mt-4">Acompanhamento</h5>
+
+                            <div class="textarea">
+                                <form action="">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Comente aqui</mat-label>
+                                        <input matInput #message maxlength="256">
+                                        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                                    </mat-form-field>
+
+                                    <div class="buttons">
+                                        <button class="btn archive">
+                                            Anexar arquivos
+                                        </button>
+
+                                        <button class="btn comment">
+                                            Enviar comentário
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="last-comment">
+                                <h6>Últimos comentários</h6>
+
+                                <div class="container-comment">
+                                    <div class="comment">
+                                        <div class="image">
+                                            <img src="./assets/imagens/perfil.jpg" alt="">
+                                        </div>
+                                        <div class="description">
+                                            <div class="name">
+                                                <h6>Maicon Hugo</h6>
+                                                <p>O Ap 101 fez muito barulho ontem</p>
+                                            </div>
+                                            <span>há 7 dias atrás</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="edit">
+                                <div class="toggle">
+                                    <mat-slide-toggle></mat-slide-toggle>
+                                </div>
+                                <div class="button">
+                                    <mat-icon>edit</mat-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</section>

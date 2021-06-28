@@ -1,0 +1,195 @@
+#ocorrencias{
+    .container {
+        @media (min-width: 1400px) {
+          max-width: 1820px;
+        }
+    
+        &-box {
+    
+            &-header {
+                margin-top: 3rem;
+    
+                .title {
+                    h1 {
+                        color: var(--purple-100);
+                        font-weight: 400;
+                    }
+                }
+
+                .button {
+                    margin-top: 2rem;
+          
+                    button {
+                      background: linear-gradient(0deg, #E3D9FD, #E3D9FD), #FFFFFF;
+                      box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+                      border-radius: .2rem;
+                      color: var(--purple-200);
+                      text-transform: uppercase;
+                      font-weight: 500;
+          
+                      display: flex;
+                      justify-content: center;
+          
+                      mat-icon {
+                        margin-right: .3rem;
+                      }
+                    }
+                }
+            }
+
+            &-accordion{
+                mat-accordion{
+                    mat-expansion-panel{
+                        mat-expansion-panel-header{
+                            height: 6rem;
+                            .mat-content{
+                                display: block !important;
+                            }
+
+                            .mat-expansion-indicator{
+                                order: 1;
+                            }
+
+                            mat-panel-description{
+                                color: rgba(98, 0, 238, 0.5);
+
+                                span{
+                                    font-weight: bold;
+                                    margin-right: .3rem;
+
+                                    &:nth-child(2){
+                                        margin-left: .3rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        
+                        .container{
+                            &-information{
+                                display: flex;
+                                flex-wrap: wrap;
+                                margin-top: 1.5rem;
+
+                                .item{
+                                    width: 140px;
+
+                                    &.residencia{
+                                        width: 180px;
+                                    }
+
+                                    &.description{
+                                        width: auto;
+                                    }
+                                }
+                            }
+
+                            &-acompanhamento{
+                                h5{
+                                    padding-bottom: 1rem;
+                                    border-bottom: 1px solid rgba(227, 217, 253, 0.5); 
+                                }
+
+                                .textarea{
+                                    margin-top: 1.5rem;
+
+                                    form{
+                                        mat-form-field{
+                                            width: 40%;
+                                            height: 7rem;
+    
+                                            input{
+                                                height: 3rem;
+                                            }
+                                        }
+
+                                        .buttons{
+                                            margin-bottom: 2rem;
+                                            .btn{
+                                                border-radius: .3rem;
+                                                &.archive{
+                                                    border: solid 1px #E5E5E5;
+                                                    color: var(--purple-200);
+                                                    margin-right: 1rem;
+                                                }
+
+                                                &.comment{
+                                                    background: linear-gradient(180deg, #512DA8 0%, rgba(172, 141, 247, 0.15) 100%), #512DA8;
+                                                    color: var(--white);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .last-comment{
+                                    margin-bottom: 2.5rem;
+
+                                    .container-comment{
+                                        .comment{
+                                            display: flex;
+                                            align-items: center;
+                                            background: var(--purple-50);
+                                            padding: .8rem;
+                                            border-radius: .3rem;
+
+                                            .image{
+                                                margin-right: .5rem;
+
+                                                img{
+                                                    width: 45px;
+                                                    height: 45px;
+                                                    object-fit: cover;
+                                                    object-position: center;
+                                                    border-radius: 50%;
+                                                }
+                                            }
+
+                                            .description{
+                                                .name{
+                                                    h6{
+                                                        font-size: .7rem;
+                                                        margin-bottom: .2rem;
+                                                        color: #7F2FF0;
+                                                        font-style: italic
+                                                    }
+    
+                                                    p{
+                                                        margin-bottom: .3rem;
+                                                    }
+                                                }
+    
+                                                >span{
+                                                    font-size: .8rem;
+                                                    font-weight: bold;
+                                                    font-style: italic;
+                                                    color: #565656;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .edit{
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    align-items: center;
+
+                                    .toggle{
+                                        margin-right: 1rem;
+                                    }
+
+                                    .button{
+                                        mat-icon{
+                                            color: #7491F9;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

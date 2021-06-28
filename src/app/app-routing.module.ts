@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'cadastro', loadChildren: () => import('./pages/cadastro/cadastro.module').then(m => m.CadastroModule) },
   { path: 'forgot-password', loadChildren: () => import('./pages/forgot-password/forgot-password.module').then(m => m.ForgotPasswordModule) },
   { path: 'visitantes', loadChildren: () => import('./pages/visitantes/visitantes.module').then(m => m.VisitantesModule), canActivate:[AutenticacaoGuard] },
-  { path: 'documentos', loadChildren: () => import('./pages/documentos/documentos.module').then(m => m.DocumentosModule), canActivate:[AutenticacaoGuard] }
+  { path: 'documentos', loadChildren: () => import('./pages/documentos/documentos.module').then(m => m.DocumentosModule), canActivate:[AutenticacaoGuard] },
+  { path: 'ocorrencias', loadChildren: () => import('./pages/ocorrencias/ocorrencias.module').then(m => m.OcorrenciasModule), canActivate:[AutenticacaoGuard] }
 ];
 
 @NgModule({
