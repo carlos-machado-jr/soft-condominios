@@ -1,0 +1,106 @@
+#documentos {
+  .container {
+    @media (min-width: 1400px) {
+      max-width: 1820px;
+    }
+
+    &-box {
+
+      &-header {
+        margin-top: 3rem;
+
+        .title {
+          h1 {
+            color: var(--purple-100);
+            font-weight: 400;
+          }
+        }
+
+        .button {
+          margin-top: 2rem;
+
+          button {
+            background: linear-gradient(0deg, #E3D9FD, #E3D9FD), #FFFFFF;
+            box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+            border-radius: .2rem;
+            color: var(--purple-200);
+            text-transform: uppercase;
+            font-weight: 500;
+
+            display: flex;
+            justify-content: center;
+
+            mat-icon {
+              margin-right: .3rem;
+            }
+          }
+        }
+      }
+
+      &-accordion {
+        mat-accordion {
+          mat-expansion-panel {
+
+            .container {
+              &-button {
+                margin-top: 1.5rem;
+                a{
+                  padding: .3rem 1rem;
+                  border: solid 1px #E5E5E5;
+                  border-radius: .3rem;
+                  color: var(--purple-150);
+                  text-decoration: none;
+                }
+              }
+
+              &-body{
+                margin-top: 3rem;
+                .box{
+                  display: flex;
+                  justify-content: space-evenly;
+                  flex-wrap: wrap;
+                  .item{
+                    width: 140px;
+                    max-width: 140px;
+                    text-align: center;
+                    .icon{
+                      mat-icon{
+                        font-size: 2.5rem;
+                        color: var(--purple-250);
+                        width: auto;
+                        height: auto;
+                      }
+
+                      .name{
+                        p{
+                          color: var(--dark);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            mat-expansion-panel-header {
+              .edit {
+                color: #7491F9;
+              }
+
+              .trash {
+                color: var(--red-50);
+              }
+
+              mat-panel-title {
+                mat-icon {
+                  color: var(--purple-250);
+                  margin-right: .4rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
