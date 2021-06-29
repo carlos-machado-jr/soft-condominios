@@ -14,7 +14,9 @@ const routes: Routes = [
   { path: 'ocorrencias', loadChildren: () => import('./pages/ocorrencias/ocorrencias.module').then(m => m.OcorrenciasModule), canActivate:[AutenticacaoGuard] },
   { path: 'cad-visitantes', loadChildren: () => import('./pages/cad-visitantes/cad-visitantes.module').then(m => m.CadVisitantesModule), canActivate:[AutenticacaoGuard] },
   { path: 'cad-documentos', loadChildren: () => import('./pages/cad-documentos/cad-documentos.module').then(m => m.CadDocumentosModule), canActivate:[AutenticacaoGuard] },
-  { path: 'cad-ocorrencia', loadChildren: () => import('./pages/cad-ocorrencia/cad-ocorrencia.module').then(m => m.CadOcorrenciaModule), canActivate:[AutenticacaoGuard] },
+  { path: 'encomendas', loadChildren: () => import('./pages/encomendas/encomendas.module').then(m => m.EncomendasModule), canActivate:[AutenticacaoGuard] },
+  { path: 'cad-encomendas', loadChildren: () => import('./pages/cad-encomendas/cad-encomendas.module').then(m => m.CadEncomendasModule), canActivate:[AutenticacaoGuard] },
+  { path: 'sugestao', loadChildren: () => import('./pages/sugestao/sugestao.module').then(m => m.SugestaoModule), canActivate:[AutenticacaoGuard] },
 ];
 
 @NgModule({

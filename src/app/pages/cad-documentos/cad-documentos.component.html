@@ -6,22 +6,28 @@
     </div>
 
     <div class="container-form">
-      <form action="">
+      <form [formGroup]="formDocumentos">
         <div class="row">
           <div class="col-12">
             <div class="form-group">
               <mat-form-field appearance="outline">
                 <mat-label>Nome do Documento</mat-label>
                 <input matInput type="text" formControlName="name" required>
-                <mat-error>Informe o nome</mat-error>
+                <mat-error>Informe o nome do documento</mat-error>
               </mat-form-field>
             </div>
           </div>
 
           <div class="col-12 mb-5">
-            <div class="form-group file">
-              <label for="">Documento</label>
-              <input type="file" name="" id="">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Insira o Documento</mat-label>
+                <ngx-mat-file-input formControlName="doc_file" required></ngx-mat-file-input>
+                <mat-icon matSuffix>folder</mat-icon>
+                <mat-error *ngIf="formDocumentos.get('doc_file').hasError('required')">
+                  Insira um documento
+                </mat-error>
+              </mat-form-field>
             </div>
           </div>
         </div>

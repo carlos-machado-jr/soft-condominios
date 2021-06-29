@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-visitantes',
@@ -9,9 +8,9 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./visitantes.component.scss'],
 })
 export class VisitantesComponent implements OnInit {
-  constructor(public dialog: MatDialog) {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   displayedColumns: string[] = [
     'name',
@@ -20,6 +19,7 @@ export class VisitantesComponent implements OnInit {
     'entrada',
     'saida',
     'observacao',
+    'acoes',
   ];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
@@ -37,6 +37,7 @@ export interface PeriodicElement {
   entrada: string;
   saida: string;
   observacao: string;
+  acoes: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -47,6 +48,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Grazielle',
@@ -55,6 +57,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Lithium',
@@ -63,6 +66,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Beryllium',
@@ -71,6 +75,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Boron',
@@ -79,6 +84,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Carbon',
@@ -87,6 +93,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Nitrogen',
@@ -95,6 +102,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Oxygen',
@@ -103,6 +111,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Fluorine',
@@ -111,6 +120,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Neon',
@@ -119,6 +129,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Sodium',
@@ -127,6 +138,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Magnesium',
@@ -135,6 +147,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Aluminum',
@@ -143,6 +156,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Silicon',
@@ -151,6 +165,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Phosphorus',
@@ -159,6 +174,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Sulfur',
@@ -167,6 +183,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Chlorine',
@@ -175,6 +192,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Argon',
@@ -183,6 +201,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Potassium',
@@ -191,6 +210,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
   {
     name: 'Calcium',
@@ -199,5 +219,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
     entrada: '16/05/2021 às 15:54hrs',
     saida: '16/05/2021 às 20:24hrs',
     observacao: 'Qualquer coisa aqui.',
+    acoes: 'edit'
   },
 ];

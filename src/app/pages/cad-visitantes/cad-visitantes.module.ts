@@ -5,6 +5,7 @@ import { CadVisitantesRoutingModule } from './cad-visitantes-routing.module';
 import { CadVisitantesComponent } from './cad-visitantes.component';
 import { MaterialDesignModule } from 'src/app/share/material-design/material-design.module';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -17,6 +18,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     CadVisitantesRoutingModule,
     MaterialDesignModule,
     NgxMaskModule.forRoot(),
+    ReactiveFormsModule
   ],
   exports: [
     MaterialDesignModule

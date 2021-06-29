@@ -1,0 +1,53 @@
+#sugestao{
+    .container {    
+
+        @media (min-width: 1400px) {
+            max-width: 1820px;
+        }
+
+        &-box {
+            &-header {
+                margin-top: 3rem;
+    
+                .title {
+                    h1 {
+                        color: var(--purple-100);
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            &-accordion{
+                mat-panel-title{
+                    color: var(--dark);
+
+                    mat-icon{
+                        margin-right: .4rem;
+                        transform: rotate(180deg);
+                        color: var(--purple-250)
+                    }
+                }
+
+                .container-information{
+                    .information{
+                        p, span{
+                            color: rgba(98, 0, 238, 0.8);
+                            
+                            &:first-child{
+                                margin-bottom: .3rem;
+                            }
+                        }                        
+                    }
+
+                    .description{
+                        margin-top: 1.8rem;
+
+                        h6{
+                            margin-bottom: .2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+#encomendas{
+    .container{
+        @media (min-width: 1400px){
+            max-width: 1820px;
+        }
+
+        &-box{
+
+            &-header{
+                margin-top: 3rem;
+
+                .title{
+                    h1{
+                        color: var(--purple-100);
+                        font-weight: 400;
+                    }
+                }
+
+                .button{
+                    margin-top: 2rem;
+
+                    a{
+                        background: linear-gradient(0deg, #E3D9FD, #E3D9FD), #FFFFFF;
+                        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+                        border-radius: .2rem;
+                        color: var(--purple-200);
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        width: 13%;
+
+                        display: flex;
+                        justify-content: center;
+
+                        mat-icon{
+                            margin-right: .3rem;
+                        }
+
+                        @media (max-width: 767px){
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            &-table{
+                margin-top: 3rem;
+
+                table{
+                    width: 100%;
+                    border-radius: .3rem;
+                }
+            }
+        }
+    }
+}
