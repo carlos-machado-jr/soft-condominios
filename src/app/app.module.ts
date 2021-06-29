@@ -11,6 +11,7 @@ import { SidenavMenuComponent } from './share/components/sidenav-menu/sidenav-me
 import { AutenticacaoGuard } from './core/guards/autenticacao.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { AutentiticacaoService } from './share/utils/services/autentiticacao.service';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AutentiticacaoService } from './share/utils/services/autentiticacao.ser
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialDesignModule
+    MaterialDesignModule,
+    MatDialogModule
   ],
   providers: [AutentiticacaoService, AutenticacaoGuard],
   bootstrap: [AppComponent]
