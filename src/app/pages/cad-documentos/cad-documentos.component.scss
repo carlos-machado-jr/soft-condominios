@@ -1,0 +1,46 @@
+#cad-documentos {
+    padding-top: 4rem;
+  
+    .container {
+      &-title {
+        margin-bottom: 3rem;
+  
+        h1 {
+          color: var(--purple-100);
+          font-weight: 400;
+        }
+      }
+  
+      &-form {
+        .form-group {
+          mat-form-field {
+            width: 100%;
+          }
+
+          &.file{
+            display: flex;
+            flex-direction: column;
+            border: solid 1px #E5E5E5;
+            padding: .8rem;
+            border-radius: .3rem;
+
+            label{
+                margin-bottom: .8rem;
+            }
+          }
+        }
+  
+        .submit {
+          text-align: center;
+  
+          button {
+            background-color: var(--purple-150);
+            color: var(--white);
+            width: 50%;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,37 @@
+<section id="cad-documentos">
+  <div class="container">
+    <div class="container-title">
+      <h1>Cadastrar Documento</h1>
+      <p>Preencha todos os campos abaixo para realizar o cadastro.</p>
+    </div>
+
+    <div class="container-form">
+      <form action="">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Nome do Documento</mat-label>
+                <input matInput type="text" formControlName="name" required>
+                <mat-error>Informe o nome</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-12 mb-5">
+            <div class="form-group file">
+              <label for="">Documento</label>
+              <input type="file" name="" id="">
+            </div>
+          </div>
+        </div>
+
+        <div class="submit">
+          <button type="submit" class="btn">
+            Cadastrar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

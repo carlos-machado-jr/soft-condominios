@@ -12,7 +12,9 @@ const routes: Routes = [
   { path: 'visitantes', loadChildren: () => import('./pages/visitantes/visitantes.module').then(m => m.VisitantesModule), canActivate:[AutenticacaoGuard] },
   { path: 'documentos', loadChildren: () => import('./pages/documentos/documentos.module').then(m => m.DocumentosModule), canActivate:[AutenticacaoGuard] },
   { path: 'ocorrencias', loadChildren: () => import('./pages/ocorrencias/ocorrencias.module').then(m => m.OcorrenciasModule), canActivate:[AutenticacaoGuard] },
-  { path: 'cad-visitante', loadChildren: () => import('./pages/cad-visitante/cad-visitante.module').then(m => m.CadVisitanteModule) }
+  { path: 'cad-visitantes', loadChildren: () => import('./pages/cad-visitantes/cad-visitantes.module').then(m => m.CadVisitantesModule), canActivate:[AutenticacaoGuard] },
+  { path: 'cad-documentos', loadChildren: () => import('./pages/cad-documentos/cad-documentos.module').then(m => m.CadDocumentosModule), canActivate:[AutenticacaoGuard] },
+  { path: 'cad-ocorrencia', loadChildren: () => import('./pages/cad-ocorrencia/cad-ocorrencia.module').then(m => m.CadOcorrenciaModule), canActivate:[AutenticacaoGuard] },
 ];
 
 @NgModule({

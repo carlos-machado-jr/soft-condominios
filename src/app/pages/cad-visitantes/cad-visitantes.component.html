@@ -1,0 +1,72 @@
+<section id="cad-visitantes">
+  <div class="container">
+    <div class="container-title">
+      <h1>Cadastrar Visitante</h1>
+      <p>Preencha todos os campos abaixo para realizar o cadastro.</p>
+    </div>
+
+    <div class="container-form">
+      <form action="">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Nome Completo</mat-label>
+                <input matInput type="text" formControlName="name" required>
+                <mat-error>Informe o e-mail</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>CPF</mat-label>
+                <input matInput type="text" mask="000.000.000-00" formControlName="cpf" required>
+                <mat-error>Informe o CPF</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Tipo de Visitante</mat-label>
+                <mat-select formControlName="type_visitante">
+                  <mat-option value="ac">AC</mat-option>
+                </mat-select>
+                <mat-error>Informe o Tipo de Visitante</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Número do bloco</mat-label>
+                <input matInput type="text" formControlName="number_bloco" required>
+                <mat-error>Informe o número do bloco</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Apartamento</mat-label>
+                <input matInput type="text" formControlName="number_apartament" required>
+                <mat-error>Informe o número do apartamento</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <div class="submit">
+          <button type="submit" class="btn">
+            Cadastrar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
