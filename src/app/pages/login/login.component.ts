@@ -24,9 +24,51 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.formularioLogin();
+    this.createForm();
   }
-  
+ 
+
+  async logar() {
+    try {
+      this.autenticacao.login(this.formLogin.value)
+        .subscribe(complete => this.router.navigate(['folder']), error => {
+          console.log(error);
+          let message: string
+          switch (error.status) {
+            case 401:
+              message = 'Usuário ou Senha Incorretos';
+              break;
+
+            case 403:
+              message = 'Usuário não autenticado';
+              break;
+
+            case 404:
+              message = 'Servidor não encontrado';
+              break;
+
+            case 408:
+              message = 'Tempo de conexão esgotado';
+              break;
+          }
+          //message
+          
+        })
+    }
+    finally {
+      //loading end
+    }
+  }
+
+
+  createForm() {
+    this.formLogin = this.formBuilder.group({
+      email_login: ['', Validators.required],
+      password_login: ['', Validators.required]
+    });
+  }
+
+  /*
  
 
   logar(){
@@ -46,5 +88,5 @@ export class LoginComponent implements OnInit {
       password_login: ['', Validators.required],
     })
   }
-
+*/
 }

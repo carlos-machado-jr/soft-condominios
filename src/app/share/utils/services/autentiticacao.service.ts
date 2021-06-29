@@ -38,7 +38,7 @@ export class AutentiticacaoService {
     }).pipe(
       tap(response => {
         console.log(response)
-        // this.succesfulLogin(response.headers.get('Authorization'))
+        this.succesfulLogin(response.headers.get('Authorization'))
       })
     );
   }
