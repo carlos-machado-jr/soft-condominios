@@ -37,6 +37,7 @@ export class AutentiticacaoService {
       responseType: 'text'
     }).pipe(
       tap(response => {
+        console.log(usuario);
         console.log(response)
         this.succesfulLogin(response.headers.get('Authorization'))
       })

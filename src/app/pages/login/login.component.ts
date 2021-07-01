@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
  
 
   async logar() {
-    try {
       this.autenticacao.login(this.formLogin.value)
         .subscribe(complete => this.router.navigate(['home']), error => {
           console.log(error);
+<<<<<<< HEAD
           let message: string;
           console.log(this.formLogin.value);
           switch (error.status) {
@@ -54,11 +54,11 @@ export class LoginComponent implements OnInit {
           }
           //message
           
+=======
+          console.log(this.formLogin.value);
+>>>>>>> cb014913522807df811b02060d94f8618efbb0a0
         })
-    }
-    finally {
-      //loading end
-    }
+
   }
 
 
