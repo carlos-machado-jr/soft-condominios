@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'encomendas', loadChildren: () => import('./pages/encomendas/encomendas.module').then(m => m.EncomendasModule), canActivate:[AutenticacaoGuard] },
   { path: 'cad-encomendas', loadChildren: () => import('./pages/cad-encomendas/cad-encomendas.module').then(m => m.CadEncomendasModule), canActivate:[AutenticacaoGuard] },
   { path: 'sugestao', loadChildren: () => import('./pages/sugestao/sugestao.module').then(m => m.SugestaoModule), canActivate:[AutenticacaoGuard] },
-  { path: 'mudancas', loadChildren: () => import('./pages/mudancas/mudancas.module').then(m => m.MudancasModule) },
+  { path: 'mudancas', loadChildren: () => import('./pages/mudancas/mudancas.module').then(m => m.MudancasModule), canActivate:[AutenticacaoGuard] },
 ];
 
 @NgModule({

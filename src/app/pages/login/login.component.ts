@@ -31,9 +31,10 @@ export class LoginComponent implements OnInit {
   async logar() {
     try {
       this.autenticacao.login(this.formLogin.value)
-        .subscribe(complete => this.router.navigate(['folder']), error => {
+        .subscribe(complete => this.router.navigate(['home']), error => {
           console.log(error);
-          let message: string
+          let message: string;
+          console.log(this.formLogin.value);
           switch (error.status) {
             case 401:
               message = 'Usuário ou Senha Incorretos';
@@ -63,8 +64,8 @@ export class LoginComponent implements OnInit {
 
   createForm() {
     this.formLogin = this.formBuilder.group({
-      email_login: ['', Validators.required],
-      password_login: ['', Validators.required]
+      email: ['', Validators.required],
+      senha: ['', Validators.required]
     });
   }
 
