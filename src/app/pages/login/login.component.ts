@@ -29,42 +29,19 @@ export class LoginComponent implements OnInit {
  
 
   async logar() {
-    try {
       this.autenticacao.login(this.formLogin.value)
-        .subscribe(complete => this.router.navigate(['folder']), error => {
+        .subscribe(complete => this.router.navigate(['home']), error => {
           console.log(error);
-          let message: string
-          switch (error.status) {
-            case 401:
-              message = 'Usuário ou Senha Incorretos';
-              break;
-
-            case 403:
-              message = 'Usuário não autenticado';
-              break;
-
-            case 404:
-              message = 'Servidor não encontrado';
-              break;
-
-            case 408:
-              message = 'Tempo de conexão esgotado';
-              break;
-          }
-          //message
-          
+          console.log(this.formLogin.value);
         })
-    }
-    finally {
-      //loading end
-    }
+
   }
 
 
   createForm() {
     this.formLogin = this.formBuilder.group({
-      email_login: ['', Validators.required],
-      password_login: ['', Validators.required]
+      email: ['', Validators.required],
+      senha: ['', Validators.required]
     });
   }
 
