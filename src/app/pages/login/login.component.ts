@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
               break;
 
             case 404:
-              message = 'Servidor não encontrado';
+              message = 'Pagina não encontrada';
               break;
 
             case 408:

@@ -38,6 +38,7 @@ export class SidenavMenuComponent{
   public sairDaConta(){
     this.account.exibirMenu.next(false);
     this.account.estaLogado.next(false);
+    this.autenticacao.logout();
     this.router.navigate(['login']);
 
   }
