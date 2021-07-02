@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { MaterialDesignModule } from '../../share/material-design/material-design.module';
+import { SwiperModule } from "swiper/angular";
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -13,7 +15,8 @@ import { MaterialDesignModule } from '../../share/material-design/material-desig
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MaterialDesignModule
+    MaterialDesignModule,
+    SwiperModule,
   ]
 })
 export class HomeModule { }
