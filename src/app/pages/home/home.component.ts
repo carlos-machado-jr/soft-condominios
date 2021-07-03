@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import SwiperCore, { Pagination } from "swiper/core";
 
 @Component({
   selector: 'app-home',
@@ -11,5 +12,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
