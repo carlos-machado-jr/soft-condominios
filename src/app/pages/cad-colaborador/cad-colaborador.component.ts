@@ -41,6 +41,7 @@ export class CadColaboradorComponent implements OnInit {
 
   ngOnInit(): void {
     this.createFormulario();
+    this.getCondominio();
   }
 
   getCondominio(){
@@ -116,7 +117,8 @@ export class CadColaboradorComponent implements OnInit {
       name: ['', Validators.required],
       cpf: ['', Validators.required],
       sobrenome: ['', Validators.required],
-      funcao: ['', Validators.required]
+      funcao: ['', Validators.required],
+      condominio: ['', Validators.required]
     }
     )
   }
