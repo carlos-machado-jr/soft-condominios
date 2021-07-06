@@ -54,6 +54,7 @@ export class CadastroComponent implements OnInit {
       cpf: this.formulario.get('cpf').value,
       email: this.formulario.get('email').value,
       funcao: funcao,
+      condominio: null,
       linkFoto: null,
       status: null,
       senha: this.formulario.get('password').value,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import {environment} from '../../../environments/environment';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -13,6 +14,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 import { ColaboradorService } from '../../share/utils/services/colaborador.service';
 import { Router } from '@angular/router';
 import { Colaborador } from '../../core/models/colaborador';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-cad-colaborador',
@@ -27,16 +29,25 @@ export class CadColaboradorComponent implements OnInit {
   confirmarSenha: string;
   colaborador: Colaborador = new Colaborador();
   private loading: any;
+  condominio: any = [];
 
   constructor(
     private formBuilder: FormBuilder,
     private colaboradorService: ColaboradorService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient,
 
   ) { }
 
   ngOnInit(): void {
     this.createFormulario();
+  }
+
+  getCondominio(){
+    this.http.get(`${environment.baseUrl}/usuarios/auth`).subscribe(x => {
+      this.condominio = x['condominio']
+      console.log(this.condominio)
+    })
   }
 
   async cadastrar() {
@@ -53,6 +64,7 @@ export class CadColaboradorComponent implements OnInit {
       cpf: this.formulario.get('cpf').value,
       email: this.formulario.get('email').value,
       funcao: this.formulario.get('funcao').value,
+      condominio: null,
       linkFoto: null,
       status: null,
       senha: this.formulario.get('password').value,
@@ -60,7 +72,7 @@ export class CadColaboradorComponent implements OnInit {
     };
 
       console.log(this.colaborador)
-      this.colaboradorService.cadastrarColaborador(this.colaborador)
+      this.colaboradorService.cadastrarFuncionario(this.colaborador)
         .subscribe(complete => {
           console.log(complete.status);
 
