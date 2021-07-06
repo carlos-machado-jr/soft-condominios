@@ -2,7 +2,7 @@
     <div class="container">
         <div class="container-header">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" *ngIf="condominio != ''">
                     <div class="card condominio">
                         <div class="icon">
                             <mat-icon class="icon" mat-list-icon>apartment</mat-icon>
@@ -198,6 +198,13 @@
                     <a href="/ocorrencias">
                         <mat-icon>error_outline</mat-icon>
                         <h5>Ocorrências</h5>
+                    </a>
+                </div>
+
+                <div class="item">
+                    <a href="/cad-colaborador">
+                        <mat-icon>badge</mat-icon>
+                        <h5>Cadastrar Colaborador</h5>
                     </a>
                 </div>
             </div>
