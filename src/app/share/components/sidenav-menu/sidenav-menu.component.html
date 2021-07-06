@@ -14,8 +14,8 @@
         </figure>
       </div>
       <div class="descricao">
-        <span class="nome">{{ user.nome ? user.nome : 'Carlos henrique ' }}</span>
-        <span class="email">{{ user.email ? user.email : 'machadopnn@gmail.com'}}</span>
+        <span class="nome">{{dados.nome}} {{dados.sobrenome}}</span>
+        <span class="email">{{dados.email}}</span>
       </div>
     </div>
 
@@ -84,6 +84,15 @@
       <mat-list-option routerLink=''>
         <mat-icon mat-list-icon>edit_calendar</mat-icon>
         Agendamento e reservas
+
+        <span>
+          <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>
+        </span>
+      </mat-list-option>
+
+      <mat-list-option routerLink='/cad-colaborador'>
+        <mat-icon mat-list-icon>badge</mat-icon>
+        Cadastrar Colaborador
 
         <span>
           <mat-icon class="icon" mat-list-icon>chevron_right</mat-icon>

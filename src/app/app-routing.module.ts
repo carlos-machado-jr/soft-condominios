@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'cad-encomendas', loadChildren: () => import('./pages/cad-encomendas/cad-encomendas.module').then(m => m.CadEncomendasModule), canActivate:[AutenticacaoGuard] },
   { path: 'sugestao', loadChildren: () => import('./pages/sugestao/sugestao.module').then(m => m.SugestaoModule), canActivate:[AutenticacaoGuard] },
   { path: 'mudancas', loadChildren: () => import('./pages/mudancas/mudancas.module').then(m => m.MudancasModule), canActivate:[AutenticacaoGuard] },
+  { path: 'cad-colaborador', loadChildren: () => import('./pages/cad-colaborador/cad-colaborador.module').then(m => m.CadColaboradorModule), canActivate:[AutenticacaoGuard] },
 ];
 
 @NgModule({

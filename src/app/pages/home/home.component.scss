@@ -34,10 +34,18 @@
                 .information{
                     h6{
                         font-size: 1.3rem;
+                        text-transform: capitalize;
                     }
 
                     p{
                         font-size: 1.1rem;
+                        text-transform: capitalize;
+                    }
+                }
+
+                &.name{
+                    h5{
+                        text-transform: capitalize;
                     }
                 }
             }
@@ -95,6 +103,10 @@
                                 font-size: 1.3rem;
                                 width: 87%;
                                 margin: 0 auto;
+                            }
+
+                            h5{
+                                text-transform: capitalize;
                             }
                         }
                     }

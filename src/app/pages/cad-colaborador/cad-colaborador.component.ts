@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl, ValidatorFn, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const invalidCtrl = !!(control && control.invalid && control.parent.dirty);
@@ -9,30 +10,29 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return (invalidCtrl || invalidParent);
   }
 }
-import { SindicoService } from '../../share/utils/services/sindico.service';
+import { ColaboradorService } from '../../share/utils/services/colaborador.service';
 import { Router } from '@angular/router';
 import { Colaborador } from '../../core/models/colaborador';
 
-
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.scss']
+  selector: 'app-cad-colaborador',
+  templateUrl: './cad-colaborador.component.html',
+  styleUrls: ['./cad-colaborador.component.scss']
 })
-export class CadastroComponent implements OnInit {
+export class CadColaboradorComponent implements OnInit {
   hide = true;
   formulario: FormGroup;
   matcher = new MyErrorStateMatcher();
-  sindico: Colaborador = new Colaborador();
-  private loading: any;
   senha: string;
   confirmarSenha: string;
+  colaborador: Colaborador = new Colaborador();
+  private loading: any;
 
   constructor(
     private formBuilder: FormBuilder,
-    private sindicoService: SindicoService,
+    private colaboradorService: ColaboradorService,
     private router: Router
-    
+
   ) { }
 
   ngOnInit(): void {
@@ -40,7 +40,6 @@ export class CadastroComponent implements OnInit {
   }
 
   async cadastrar() {
-    let funcao: string = 'Sindico'
     this.senha = this.formulario.get('password').value;
     this.confirmarSenha = this.formulario.get('password_confirm').value;
     if(this.senha != this.confirmarSenha && this.senha != '' && this.senha != null){
@@ -48,20 +47,20 @@ export class CadastroComponent implements OnInit {
       return;
     }
 
-    this.sindico = {
+    this.colaborador = {
       nome: this.formulario.get('name').value,
       sobrenome: this.formulario.get('sobrenome').value,
       cpf: this.formulario.get('cpf').value,
       email: this.formulario.get('email').value,
-      funcao: funcao,
+      funcao: this.formulario.get('funcao').value,
       linkFoto: null,
       status: null,
       senha: this.formulario.get('password').value,
       login: this.formulario.get('email').value
     };
 
-      console.log(this.sindico)
-      this.sindicoService.cadastrarColaborador(this.sindico)
+      console.log(this.colaborador)
+      this.colaboradorService.cadastrarColaborador(this.colaborador)
         .subscribe(complete => {
           console.log(complete.status);
 
@@ -96,22 +95,17 @@ export class CadastroComponent implements OnInit {
 
   }
 
-  createFormulario(){
+
+  createFormulario() {
     this.formulario = this.formBuilder.group({
-      email: ['', Validators.required, Validators.email],
+      email: ['', Validators.required],
       password: ['', Validators.required],
       password_confirm: ['', Validators.required],
       name: ['', Validators.required],
       cpf: ['', Validators.required],
       sobrenome: ['', Validators.required],
-    }, { validator: this.checkPasswords })
-  }
-
-  
-  checkPasswords(group: FormControl) {
-    let pass = group.get("password").value;
-    let confirmPass = group.get("password_confirm").value;
-
-    return pass === confirmPass ? null : { notSame: true }
+      funcao: ['', Validators.required]
+    }
+    )
   }
 }

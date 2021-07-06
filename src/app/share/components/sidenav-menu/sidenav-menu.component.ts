@@ -5,6 +5,8 @@ import { Menu } from 'src/app/core/models/menu';
 import { User } from 'src/app/core/models/user';
 import { AutentiticacaoService } from '../../utils/services/autentiticacao.service';
 import { AccountServiceService } from '../../utils/services/account-service.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {environment} from '../../../../environments/environment';
 
 @Component({
   selector: 'sidenav-menu',
@@ -20,14 +22,20 @@ export class SidenavMenuComponent{
   public opened: boolean = false;
   public panelOpenState = false;
   public exibirMenu = false;
+  dados: any = [];
+  funcao: string;
+  sindicoList: any = [];
+  condominio: any = []
   constructor(
     private autenticacao: AutentiticacaoService,
     private account: AccountServiceService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
    ){}
 
   ngOnInit(){
     this.account.exibirMenu.subscribe(value => this.exibirMenu = value);
+    this.getUser();
   }
 
 
@@ -41,5 +49,21 @@ export class SidenavMenuComponent{
     this.autenticacao.logout();
     this.router.navigate(['login']);
 
+  }
+
+  getUser() {
+    this.http.get(`${environment.baseUrl}/usuarios/auth`).subscribe(x => {
+      let dados = JSON.stringify(x);
+      let usuario = dados;
+      this.dados = JSON.parse(usuario);
+      console.log(this.dados);
+      if(this.dados['funcao']){
+        this.condominio = this.dados.condominio[0];
+        this.funcao = this.dados['funcao'];
+        console.log(this.funcao)
+      } else{
+        this.condominio = this.dados['condominio'];
+      }
+    })
   }
 }

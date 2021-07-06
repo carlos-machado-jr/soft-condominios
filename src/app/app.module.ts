@@ -12,6 +12,7 @@ import { AutenticacaoGuard } from './core/guards/autenticacao.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { AutentiticacaoService } from './share/utils/services/autentiticacao.service';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HeadersInterceptor, HeadersInterceptorProvider } from './core/interceptors/headers.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MaterialDesignModule,
     MatDialogModule
   ],
-  providers: [AutentiticacaoService, AutenticacaoGuard],
+  providers: [AutentiticacaoService, AutenticacaoGuard, HeadersInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,8 +8,8 @@
                             <mat-icon class="icon" mat-list-icon>apartment</mat-icon>
                         </div>
                         <div class="information">
-                            <h6>Condomínio Residencial Ubá</h6>
-                            <p>Rua Cambará, 1234 - SG - RJ - 24433-230</p>
+                            <h6>{{condominio.nomeFantazia}}</h6>
+                            <p>{{condominio.rua}}, {{condominio.numero}} - {{condominio.bairro}} - {{condominio.cidade}} - {{condominio.estado}} - {{condominio.cep}}</p>
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                             <mat-icon class="icon" mat-list-icon>person</mat-icon>
                         </div>
                         <div class="description">
-                            <h5>Anna Grazielle da Conceição Silva</h5>
+                            <h5>{{dados.nome}} {{dados.sobrenome}}</h5>
                         </div>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
 
             <div class="options">
                 <div class="item">
-                    <a href="">
+                    <a href="/sugestao">
                         <mat-icon>assistant</mat-icon>
                         <h5>Sugestão</h5>
                     </a>
