@@ -65,7 +65,7 @@ export class CadColaboradorComponent implements OnInit {
       cpf: this.formulario.get('cpf').value,
       email: this.formulario.get('email').value,
       funcao: this.formulario.get('funcao').value,
-      condominio: null,
+      condominio: this.formulario.get('condominio').value,
       linkFoto: null,
       status: null,
       senha: this.formulario.get('password').value,
@@ -117,7 +117,8 @@ export class CadColaboradorComponent implements OnInit {
       name: ['', Validators.required],
       cpf: ['', Validators.required],
       sobrenome: ['', Validators.required],
-      funcao: ['', Validators.required]
+      funcao: ['', Validators.required],
+      condominio: ['', Validators.required]
     }
     )
   }
