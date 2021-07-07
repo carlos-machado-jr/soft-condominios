@@ -31,6 +31,11 @@ export class HomeComponent implements OnInit {
       let usuario = dados;
       this.dados = JSON.parse(usuario);
       console.log(this.dados);
+      if(this.dados.condominio[0].lenght > 0){
+        console.log('existe');
+      }else{
+        console.log('não existe');
+      }
       if(this.dados['funcao']){
         this.condominio = this.dados.condominio[0];
         this.funcao = this.dados['funcao'];

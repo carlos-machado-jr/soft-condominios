@@ -12,6 +12,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 import { SindicoService } from '../../share/utils/services/sindico.service';
 import { Router } from '@angular/router';
 import { Colaborador } from '../../core/models/colaborador';
+import swal from 'sweetalert2';
 
 
 @Component({
@@ -72,23 +73,23 @@ export class CadastroComponent implements OnInit {
           let color: string
           switch (error.status) {
             case 500:
-              message = 'Erro ao inserir';
-              color = 'danger';
+              message = 'Erro ao cadastrar o usuário.';
+              swal.fire('Ops', message, 'error');
               break;
 
             case 403:
-              message = 'Dados Inválidos';
-              color = 'danger';
+              message = 'Os dados fornecidos estão invalidos. Tente novamente';
+              swal.fire('Ops', message, 'error');
               break;
 
             case 404:
-              message = 'Servidor não encontrado';
-              color = 'danger';
+              message = 'O servidor não foi encontrado.';
+              swal.fire('Ops', message, 'error');
               break;
 
             case 408:
-              message = 'Tempo de conexão esgotado';
-              color = 'danger';
+              message = 'O tempo de conexão foi esgotado.';
+              swal.fire('Ops', message, 'error');
               break;
           }
           console.log(message);        

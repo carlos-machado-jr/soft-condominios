@@ -1,3 +1,4 @@
+import { Condominio } from './../../../core/models/condominio';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
@@ -57,6 +58,11 @@ export class SidenavMenuComponent{
       let usuario = dados;
       this.dados = JSON.parse(usuario);
       console.log(this.dados);
+      if(this.dados.condominio[0].lenght > 0){
+        console.log('existe');
+      }else{
+        console.log('não existe');
+      }
       if(this.dados['funcao']){
         this.condominio = this.dados.condominio[0];
         this.funcao = this.dados['funcao'];

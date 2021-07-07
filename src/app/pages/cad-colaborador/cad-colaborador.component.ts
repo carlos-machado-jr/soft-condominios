@@ -14,6 +14,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 import { ColaboradorService } from '../../share/utils/services/colaborador.service';
 import { Router } from '@angular/router';
 import { Colaborador } from '../../core/models/colaborador';
+import swet from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -65,7 +66,7 @@ export class CadColaboradorComponent implements OnInit {
       cpf: this.formulario.get('cpf').value,
       email: this.formulario.get('email').value,
       funcao: this.formulario.get('funcao').value,
-      condominio: null,
+      condominio: this.formulario.get('condominio').value,
       linkFoto: null,
       status: null,
       senha: this.formulario.get('password').value,
@@ -76,7 +77,7 @@ export class CadColaboradorComponent implements OnInit {
       this.colaboradorService.cadastrarFuncionario(this.colaborador)
         .subscribe(complete => {
           console.log(complete.status);
-
+          swet.fire('Parabéns!', 'Colaborador cadastrado com sucesso.', 'success');
         }, error => {
           console.log(error);
           let message: string
@@ -84,22 +85,22 @@ export class CadColaboradorComponent implements OnInit {
           switch (error.status) {
             case 500:
               message = 'Erro ao inserir';
-              color = 'danger';
+              swet.fire('Ops', message, 'error')
               break;
 
             case 403:
               message = 'Dados Inválidos';
-              color = 'danger';
+              swet.fire('Ops', message, 'error')
               break;
 
             case 404:
               message = 'Servidor não encontrado';
-              color = 'danger';
+              swet.fire('Ops', message, 'error')
               break;
 
             case 408:
               message = 'Tempo de conexão esgotado';
-              color = 'danger';
+              swet.fire('Ops', message, 'error')
               break;
           }
           console.log(message);        

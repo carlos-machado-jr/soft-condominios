@@ -4,6 +4,7 @@ import { User } from '../../core/models/user';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AutentiticacaoService } from '../../share/utils/services/autentiticacao.service';
 import { AccountServiceService } from '../../share/utils/services/account-service.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -36,18 +37,22 @@ export class LoginComponent implements OnInit {
           switch (error.status) {
             case 401:
               message = 'Usuário ou Senha Incorretos';
+              swal.fire('Ops', message, 'error');
               break;
 
             case 403:
               message = 'Usuário não autenticado';
+              swal.fire('Ops', message, 'error');
               break;
 
             case 404:
               message = 'Pagina não encontrada';
+              swal.fire('Ops', message, 'error');
               break;
 
             case 408:
               message = 'Tempo de conexão esgotado';
+              swal.fire('Ops', message, 'error');
               break;
           }
           //message
