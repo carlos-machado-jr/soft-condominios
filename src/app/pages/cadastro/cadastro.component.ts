@@ -66,6 +66,7 @@ export class CadastroComponent implements OnInit {
       this.sindicoService.cadastrarColaborador(this.sindico)
         .subscribe(complete => {
           console.log(complete.status);
+          swal.fire('Parabéns!', 'Sindico cadastrado com sucesso.', 'success');
 
         }, error => {
           console.log(error);

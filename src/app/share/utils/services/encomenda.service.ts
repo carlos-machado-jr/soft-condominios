@@ -20,4 +20,12 @@ export class EncomendaService {
       })
     );
   }
+
+  atualizarEncomenda(id: any, encomenda, idCondominio) {
+    return this.http.put(`${environment.baseUrl}/encomendas/` + id, encomenda).subscribe(x => {
+      console.log(x);  
+      }
+    )
+  }
+
 }
