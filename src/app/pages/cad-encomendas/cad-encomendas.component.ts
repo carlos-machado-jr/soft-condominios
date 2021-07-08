@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { EncomendaService } from 'src/app/share/utils/services/encomenda.service';
 import { ActivatedRoute } from '@angular/router';
 import swet from 'sweetalert2';
+
 @Component({
   selector: 'app-cad-encomendas',
   templateUrl: './cad-encomendas.component.html',
@@ -20,16 +21,18 @@ export class CadEncomendasComponent implements OnInit {
   private activatedRoute: ActivatedRoute) { }
 
   formulario: FormGroup;
+  loading: any;
   encomenda: Encomenda = new Encomenda();
   user: any = [];
   nome: any = [];
   destinatario: string;
-  idUser: any = [];
+  idUser: any = []
   id: any;
   idRoute: any;
-
-  ngOnInit(): void {
+  
+  ngOnInit() {
     this.idRoute = this.activatedRoute.snapshot.params['id'];
+    console.log(this.idRoute)
     this.formEncomenda();
     this.getNome();
   }
@@ -45,7 +48,7 @@ export class CadEncomendasComponent implements OnInit {
 
   async cadastrar() {
     this.encomenda = {
-      descricao: this.formulario.get('descricao').value,
+      descricao: this.formulario.get('description').value,
       destinatario: this.idUser
     }
     console.log(this.encomenda);
@@ -83,14 +86,27 @@ export class CadEncomendasComponent implements OnInit {
 
         })
     }
+
+    filtrarNome(evt) {
+      const procurarNome = evt.srcElement.value;
+      this.nome = this.user.filter(x => {
+        if (x => x['nome'] + ' ' + x['sobrenome'] == this.destinatario) {
+          return ((x['nome'] + ' ' + x['sobrenome']).toLocaleLowerCase().indexOf(procurarNome.toLowerCase()) > -1);
+        }
+      });
+  
+      let dados = JSON.stringify(this.nome);
+      let usuario = dados;
+      let id = JSON.parse(usuario);
+      this.idUser = id[0].id
+      console.log(this.idUser);
+    }
   
 
 
   formEncomenda(){
-    this.formEncomendas = this.formBuilder.group({
+    this.formulario = this.formBuilder.group({
       destinatario: ['', Validators.required],
-      number_block: ['', Validators.required],
-      number_apartament: ['', Validators.required],
       description: ['', Validators.required]
     })
   }

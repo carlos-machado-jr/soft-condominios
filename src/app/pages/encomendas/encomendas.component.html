@@ -5,8 +5,8 @@
                 <h1>Encomendas</h1>
             </div>
 
-            <div class="button">
-                <a href="/cad-encomendas" class="btn">
+            <div class="button" [routerLink]="['/cad-encomendas',id]">
+                <a class="btn">
                     <mat-icon mat-list-icon>add</mat-icon>
                     Nova encomenda
                 </a>
@@ -24,17 +24,22 @@
 
                     <ng-container matColumnDef="bloco">
                         <th mat-header-cell *matHeaderCellDef> Bloco </th>
-                        <td mat-cell *matCellDef="let element"> {{element.bloco}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.morador.bloco}} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="apartamento">
                         <th mat-header-cell *matHeaderCellDef> Apartamento </th>
-                        <td mat-cell *matCellDef="let element"> {{element.apartamento}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.morador.apartamento}} </td>
                     </ng-container>
 
-                    <ng-container matColumnDef="data_entrega">
+                    <ng-container matColumnDef="dataCriacao">
                         <th mat-header-cell *matHeaderCellDef> Data de Entrega </th>
-                        <td mat-cell *matCellDef="let element"> {{element.data_entrega}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.dataCriacao}} as {{element.horaCriacao }} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="dataEntrega">
+                        <th mat-header-cell *matHeaderCellDef> Data de Entrega </th>
+                        <td mat-cell *matCellDef="let element"> {{element.dataEntrega}} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="descricao">
@@ -47,17 +52,16 @@
                         <td mat-cell *matCellDef="let element"> {{element.status}} </td>
                     </ng-container>
 
-                    <!-- <ng-container matColumnDef="acoes">
+                    
+
+                    <ng-container matColumnDef="acoes">
                         <th mat-header-cell *matHeaderCellDef> Ações </th>
-                        <td mat-cell>
-                            <mat-list-option routerLink=''>
-                                <mat-icon mat-list-icon>logout</mat-icon>
-                            </mat-list-option>
-                            <mat-list-option routerLink=''>
-                                <mat-icon mat-list-icon>edit</mat-icon>
-                            </mat-list-option>
+                        <td mat-cell *matCellDef="let element">
+                            <button mat-icon-button matSuffix (click)="alterar(element.id, element.descricao, element.morador.id)">
+                                <mat-icon style="color: green">checked</mat-icon>
+                              </button>
                         </td>
-                    </ng-container> -->
+                    </ng-container>
 
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

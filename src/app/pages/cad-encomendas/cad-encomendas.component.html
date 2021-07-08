@@ -5,35 +5,22 @@
             <p>Preencha todos os campos abaixo para realizar o cadastro.</p>
         </div>
 
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option style="text-transform: capitalize;" *ngFor="let usuarios of nome" value="{{usuarios.nome}} {{usuarios.sobrenome}}">
+                {{usuarios.nome}} {{usuarios.sobrenome}}
+            </mat-option>
+        </mat-autocomplete>
+
         <div class="container-form">
-            <form [formGroup]="formEncomendas" (ngSubmit)="cadastrar()">
+            <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <mat-form-field appearance="outline">
                                 <mat-label>Destinatário</mat-label>
-                                <input matInput type="text" formControlName="destinatario" required>
+                                <input (input)="filtrarNome($event)"
+                                [(ngModel)]='destinatario' formControlName="destinatario" matInput [matAutocomplete]="auto">
                                 <mat-error>Informe o destinatario</mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <mat-form-field appearance="outline">
-                                <mat-label>Número do Bloco</mat-label>
-                                <input matInput type="text" formControlName="number_block" required>
-                                <mat-error>Informe o número do bloco</mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <mat-form-field appearance="outline">
-                                <mat-label>Número do Apartamento</mat-label>
-                                <input matInput type="number" formControlName="number_apartament" required>
-                                <mat-error>Informe o número do apartamento</mat-error>
                             </mat-form-field>
                         </div>
                     </div>

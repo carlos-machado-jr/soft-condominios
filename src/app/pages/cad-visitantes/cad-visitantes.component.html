@@ -6,14 +6,24 @@
     </div>
 
     <div class="container-form">
-      <form [formGroup]="formVisitante">
+      <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-3">
             <div class="form-group">
               <mat-form-field appearance="outline">
-                <mat-label>Nome Completo</mat-label>
+                <mat-label>Nome</mat-label>
                 <input matInput type="text" formControlName="name" required>
-                <mat-error>Informe o e-mail</mat-error>
+                <mat-error>Informe o nomel</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Sobrenome</mat-label>
+                <input matInput type="text" formControlName="sobrenome" required>
+                <mat-error>Informe o sobrenome</mat-error>
               </mat-form-field>
             </div>
           </div>
